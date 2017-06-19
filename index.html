@@ -17,6 +17,8 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+    <script src="bower_components/aos/dist/aos.js"></script>
 </head>
 <style>
     body {
@@ -98,61 +100,70 @@
         line-height: 2em;
     }
     
-    #cards {
-        visibility: hidden;
-        bottom: 50px;
-    }
-    
-    #about {
-        position: relative;
+    #home {
         padding: 15px;
         background: url('img/cover.jpg') no-repeat top center;
-        background-size: cover;
+        background-size: 100vw;
+    }
+    
+    #arrow {
+        position: fixed;
+        right: 50px;
+        bottom: 100px;
+        width: 20px;
+        height: 100px;
+    }
+    
+    .blink {
+        animation: blinker 1.5s linear infinite;
+    }
+    
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
     }
 </style>
 
-
-<section id="about">
+<img src="./img/arrow.png" id="arrow" class="blink">
+<section id="home">
     <h2>To whom it may concern,</h2>
     <h1 class="title" style="padding: 10% 40px;"><span style="font-size:25px">Hi:) This is </span><i>Tina, Lee-Ting-Ting</i></h1>
-    <div class="container">
-        <div class="row text-center" style="margin-left: 15%; margin-right: 15%;" id="cards">
-            <div class="col">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="front" style="background: url('./img/model.jpg') 0 0 no-repeat;background-size: 200px 300px;
-        z-index: 2;">
-                        </div>
-                        <div class="back">
-                            <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic,
-                                CSS Tinkerer, PHP Hacker, and web lover.</p>
-                        </div>
+    <div class="row text-center" style="margin-left: 15%; margin-right: 15%; margin-top:22%; padding-bottom: 25%" id="cards"
+        data-aos="fade-up">
+        <div class="col">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front" style="background: url('./img/model.jpg') 0 0 no-repeat;background-size: 200px 300px;
+                        z-index: 2;"></div>
+                    <div class="back">
+                        <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic,
+                            CSS Tinkerer, PHP Hacker, and web lover.</p>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="front" style="background: url('./img/entrepreneur.jpg') 0 0 no-repeat;background-size: 200px 300px;
-        z-index: 2;">
-                        </div>
-                        <div class="back">
-                            <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic,
-                                CSS Tinkerer, PHP Hacker, and web lover.</p>
-                        </div>
+        </div>
+        <div class="col">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front" style="background: url('./img/entrepreneur.jpg') 0 0 no-repeat;background-size: 200px 300px;
+                        z-index: 2;"></div>
+                    <div class="back">
+                        <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic,
+                            CSS Tinkerer, PHP Hacker, and web lover.</p>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="front" style="background: url('./img/developer.jpg') 0 0 no-repeat;background-size: 200px 300px;
-        z-index: 2;">
-                        </div>
-                        <div class="back">
-                            <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic,
-                                CSS Tinkerer, PHP Hacker, and web lover.</p>
-                        </div>
+        </div>
+        <div class="col">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front" style="background: url('./img/developer.jpg') 0 0 no-repeat;background-size: 200px 300px;
+                        z-index: 2;">
+                    </div>
+                    <div class="back">
+                        <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic,
+                            CSS Tinkerer, PHP Hacker, and web lover.</p>
                     </div>
                 </div>
             </div>
@@ -161,11 +172,15 @@
 </section>
 
 
+
 <script>
-    setTimeout(function () {
+    AOS.init({
+        duration: 1200,
+    });
+    /*setTimeout(function () {
         $('#cards').css('visibility', 'visible');
         $('#cards').addClass('animated fadeInUp');
-    }, 1000);
+    }, 1000);*/
 
 </script>
 

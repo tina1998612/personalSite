@@ -1,0 +1,20 @@
+{
+  "name": "tina",
+  "homepage": "https://github.com/tina1998612/personalSite",
+  "authors": [
+    "tina1998612 <tina26919742@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "aos": "^2.1.1"
+  }
+}
