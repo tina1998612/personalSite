@@ -21,6 +21,11 @@
     <script src="bower_components/aos/dist/aos.js"></script>
 </head>
 <style>
+    @font-face {
+        font-family: myFirstFont;
+        src: url('./font/hi.ttf');
+    }
+    
     body {
         font-family: 'Spectral', serif;
         text-shadow: 2px 2px white;
@@ -110,8 +115,15 @@
         position: fixed;
         right: 50px;
         bottom: 100px;
-        width: 20px;
-        height: 100px;
+        font-family: myFirstFont;
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    #arrow-img {
+        width: 30px;
+        height: 150px;
+        display: block;
     }
     
     .blink {
@@ -125,11 +137,14 @@
     }
 </style>
 
-<img src="./img/arrow.png" id="arrow" class="blink">
+<div class="blink" id="arrow">
+    <img src="./img/arrow.png" id="arrow-img">
+    <span style="padding-right: 4px;">scroll</span>
+</div>
 <section id="home">
     <h2>To whom it may concern,</h2>
     <h1 class="title" style="padding: 10% 40px;"><span style="font-size:25px">Hi:) This is </span><i>Tina, Lee-Ting-Ting</i></h1>
-    <div class="row text-center" style="margin-left: 15%; margin-right: 15%; margin-top:22%; padding-bottom: 25%" id="cards"
+    <div class="row text-center" style="margin-left: 15%; margin-right: 15%; margin-top:24%; padding-bottom: 25%" id="cards"
         data-aos="fade-up">
         <div class="col">
             <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
